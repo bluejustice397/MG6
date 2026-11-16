@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -15,6 +16,12 @@ public class Cat : MonoBehaviour
     private bool _facingLeft;
     private bool _isGrounded = true;
     private float _attackTime;
+
+
+    
+
+
+
 
     // ------------------------------------------------------------------------
     private void Update()
@@ -64,6 +71,24 @@ public class Cat : MonoBehaviour
         //      collider.
         // You might want to check the Rigidbody2D scripting documentation
         //      for a useful variable :)
+
+        if (_rigidbody.linearVelocity.y > 0f)
+        {
+
+
+            _collider.enabled = false;
+        
+        
+        
+        }
+
+        else 
+        {
+
+            _collider.enabled = true;
+        
+        
+        }
         
 
         

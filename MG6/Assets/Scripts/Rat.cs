@@ -34,6 +34,18 @@ public class Rat : MonoBehaviour
         //      color: first yellow, then red, then blue, then looping back
         //      around to yellow, etc.
 
+        string tag = collision.gameObject.tag;
+        if (tag.Equals("Attack"))
+        {
+            SpawnSmallRat();
+            transform.localScale *= _shrinkAmount;
+            SpawnExplosion(_colors[_colorIndex]);
+            _colorIndex = (_colorIndex + 1) % _colors.Length; 
+            
+            
+        }
+
+
 
         // STEP 2 -------------------------------------------------------------
     }
@@ -60,9 +72,9 @@ public class Rat : MonoBehaviour
         //      rotation correctly.
         // Your game should look exaclty like the finished example.
 
-        //float randomAngle = Random.Range(0, 360);
+        float randomAngle = Random.Range(0, 360);
         //Vector3 rotationAngles = new Vector3(0, randomAngle, 0);
-        //rat.transform.Rotate(rotationAngles);
+        rat.transform.Rotate(0,randomAngle,0);
 
         // STEP 3 -------------------------------------------------------------
     }
